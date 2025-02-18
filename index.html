@@ -4,8 +4,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to My Website</title>
   <style>
     body {
@@ -89,6 +89,7 @@
       text-decoration: none;
       color: black;
       margin: 5px 0;
+      white-space: nowrap; /* Prevents wrapping */
     }
     /* Video Section */
     .video-section {
@@ -108,6 +109,39 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    /* New About Section (Image Left, Text Right) */
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+    .about-section .about-image {
+      flex: 1;
+      max-width: 50%;
+    }
+    .about-section .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about-section .about-text {
+      flex: 1;
+      max-width: 50%;
+      text-align: left;
+      /* Updated font sizes */
+      font-size: 28px;
+    }
+    .about-section .about-text h2 {
+      margin-top: 0;
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+    }
+    .about-section .about-text p {
+      font-family: "Oswald", sans-serif;
+      font-size: 28px;
     }
     main {
       padding: 20px;
@@ -142,13 +176,14 @@
           <img src="assets/facebooklogo.png" alt="Facebook">
         </a>
       </div>
-      <!-- Hamburger Menu (now to the right of social icons) -->
+      <!-- Hamburger Menu (to the right of social icons) -->
       <div class="hamburger" id="hamburger">
         <img src="assets/hamburger.png" alt="Menu">
         <!-- Dropdown Menu List -->
         <div class="menu-list" id="menu-list">
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
+          <a href="lessons.html">Lessons</a>
           <a href="contact.html">Contact</a>
           <a href="portfolio.html">Portfolio</a>
         </div>
@@ -167,6 +202,20 @@
     </div>
   </section>
 
+  <!-- New About Section (Image Left, Text Right) -->
+  <section class="about-section">
+    <div class="about-image">
+      <img src="assets/aboutmecollage.jpg" alt="About Me Collage">
+    </div>
+    <div class="about-text">
+      <h2>Maxim Voronin is a magician, contortionist, model, juggler, and stage director.</h2>
+      <p>
+        Born in San Francisco, California, Maxim grew up in the world of cabaret and theater. He is a second generation artist, following in his parent’s footsteps—Yevgeniy Voronin (World Class Magician) and Svetlana Perekhodova (one-of-a-kind contortionist)... 
+        <a href="about.html">Read More</a>
+      </p>
+    </div>
+  </section>
+
   <main>
     <p>This is the homepage of my website.</p>
   </main>
@@ -176,14 +225,11 @@
   
   <!-- JavaScript to toggle the dropdown menu -->
   <script>
-    // Toggle the menu-list when the hamburger is clicked
     document.getElementById('hamburger').addEventListener('click', function(event) {
       event.stopPropagation();
       var menuList = document.getElementById('menu-list');
       menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
     });
-    
-    // Close the menu if a click occurs outside the hamburger/menu-list
     document.addEventListener('click', function() {
       var menuList = document.getElementById('menu-list');
       if (menuList.style.display === 'block') {

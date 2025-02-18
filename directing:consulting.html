@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import both Impact and Oswald fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directing/Consultation - Maxim Voronin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: white;
+      height: 140px;
+      z-index: 10;
+    }
+    /* Left: Main website logo */
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo img {
+      height: 100px;
+    }
+    /* Center: Header text */
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: Impact, sans-serif;
+      margin: 0;
+    }
+    /* Right: Social Media Icons and Hamburger Menu */
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Social Media Icons */
+    .social-links a {
+      text-decoration: none;
+      border: none;
+      outline: none;
+      display: inline-block;
+    }
+    .social-links a img {
+      height: 40px;
+    }
+    /* Hamburger styling and dropdown menu */
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+    }
+    .hamburger img {
+      height: 40px;
+    }
+    .menu-list {
+      font-family: "Oswald", sans-serif;
+      font-size: 35px;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+      white-space: nowrap;
+    }
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      font-family: "Oswald", sans-serif;
+    }
+    main h1 {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    main p {
+      font-size: 28px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 40px;
+      font-family: "Oswald", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Left: Main website logo -->
+    <div class="logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+    <!-- Center: Header text -->
+    <div class="title">Maxim Voronin</div>
+    <!-- Right: Social Media Icons and Hamburger Menu -->
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
+          <img src="assets/youtubelogo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/magiccircusmax/" target="_blank">
+          <img src="assets/instagramlogo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
+          <img src="assets/facebooklogo.png" alt="Facebook">
+        </a>
+      </

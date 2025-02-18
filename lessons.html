@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import both Impact and Oswald fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lessons - Maxim Voronin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: white;
+      height: 140px;
+      z-index: 10;
+    }
+    /* Left: Main website logo */
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo img {
+      height: 100px;
+    }
+    /* Center: Header text */
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: Impact, sans-serif;
+      margin: 0;
+    }
+    /* Right: Social Media Icons and Hamburger Menu */
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Social Media Icons */
+    .social-links a {
+      text-decoration: none;
+      border: none;
+      outline: none;
+      display: inline-block;
+    }
+    .social-links a img {
+      height: 40px;
+    }
+    /* Hamburger styling and dropdown menu */
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+    }
+    .hamburger img {
+      height: 40px;
+    }
+    .menu-list {
+      font-family: "Oswald", sans-serif;
+      font-size: 35px;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+      white-space: nowrap;
+    }
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      font-family: "Oswald", sans-serif;
+    }
+    main h1 {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    /* Lessons Description Section */
+    .lessons-desc {
+      font-size: 28px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .lessons-desc p {
+      margin-bottom: 20px;
+    }
+    /* Container for lessons text and image */
+    .content-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .content-container .text-column {
+      flex: 2;
+    }
+    .content-container .image-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+    .content-container .image-column img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+    }
+    /* Teacher Info Section Underneath the Image */
+    .teacher-info {
+      font-size: 20px; /* Reduced font size */
+      line-height: 1.6;
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 40px;
+      font-family: "Oswald", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Left: Main website logo -->
+    <div class="logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+    <!-- Center: Header text -->
+    <div class="title">Maxim Voronin</div>
+    <!-- Right: Social Media Icons and Hamburger Menu -->
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
+          <img src="assets/youtubelogo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/magiccircusmax/" target="_blank">
+          <img src="assets/instagramlogo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
+          <img src="assets/facebooklogo.png" alt="Facebook">
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+        <div class="menu-list" id="menu-list">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="contact.html">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <h1>Lessons</h1>
+    <div class="content-container">
+      <!-- Text Column -->
+      <section class="text-column lessons-desc">
+        <p>
+          Maxim Voronin has learned magic from the teachers of Penn & Teller, Criss Angel, Lance Burton, Mat Franco, Yevgeniy Voronin, and Viktor Voitko.
+        </p>
+        <p>
+          His extensive experience in magic has taken him across the globe, with his innovative techniques earning him appearances on numerous television programs and invitations to consult on Broadway productions.
+        </p>
+        <p>
+          As a circus artist, Maxim Voronin has learned hand-balancing contortion from the best-known teacher in the world. With her school, she has produced world-class hand-balancers and contortionists such as Dima Shine, Pavel Stankevich, and Sergey Timofeev. Maxim continues his teacher’s school of hand-balancing contortion with additional development of strength conditioning and Mongolian contortion stretching.
+        </p>
+        <p>
+          For inquiries regarding in-person or online lessons with Maxim, please email <a href="mailto:magiccircusmax@gmail.com">magiccircusmax@gmail.com</a> with details of your goals and current skill level. A complimentary 30-minute consultation will be arranged to discuss your objectives, assess your proficiency, and outline a customized plan and quote.
+        </p>
+      </section>
+      
+      <!-- Image Column -->
+      <section class="image-column">
+        <img src="assets/lessons1.JPG" alt="Lessons Image">
+        <div class="teacher-info">
+          <p><strong>Who are Maxim Voronin's Teachers?</strong></p>
+          <p>
+            Magic - Johnny Thompson, Alexander Titarenko<br>
+            Hand-balancing Contortion - Nataliya Alexandrovna<br>
+            Juggling and Foot Juggling - Charly Castor<br>
+            Directing - Alexander Ivahno
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    &copy; 2025 My Website. All rights reserved.
+  </footer>
+  
+  <script>
+    // Toggle the menu-list when the hamburger is clicked
+    document.getElementById('hamburger').addEventListener('click', function(event) {
+      event.stopPropagation();
+      var menuList = document.getElementById('menu-list');
+      menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+    });
+    // Close the menu if a click occurs outside the hamburger/menu-list
+    document.addEventListener('click', function() {
+      var menuList = document.getElementById('menu-list');
+      if (menuList.style.display === 'block') {
+        menuList.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
