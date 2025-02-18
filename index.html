@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to My Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: white;
+      /* Set a fixed height to help with vertical centering */
+      height: 140px;
+    }
+    /* Main logo on the left */
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo img {
+      height: 100px;
+    }
+    /* Absolutely centered header text */
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: Impact, sans-serif;
+      margin: 0;
+    }
+    /* Right section: hamburger button & social media icons */
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hamburger img {
+      height: 40px;
+      cursor: pointer;
+    }
+    .social-links a img {
+      height: 40px;
+    }
+    main {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Left: Main website logo -->
+    <div class="logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+    <!-- Center: Header text -->
+    <div class="title">Maxim Voronin</div>
+    <!-- Right: Hamburger menu button & social media icons -->
+    <div class="header-right">
+      <div class="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+      </div>
+      <div class="social-links">
+        <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
+          <img src="assets/youtubelogo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/magiccircusmax/" target="_blank">
+          <img src="assets/instagramlogo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
+          <img src="assets/facebooklogo.png" alt="Facebook">
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <p>This is the homepage of my website.</p>
+  </main>
+  <footer>
+    &copy; 2025 My Website. All rights reserved.
+  </footer>
+</body>
+</html>
