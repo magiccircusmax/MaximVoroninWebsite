@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to My Website</title>
@@ -10,16 +13,17 @@
       padding: 0;
       background-color: white;
       color: black;
+      font-family: Arial, sans-serif;
       text-align: center;
     }
     header {
       position: relative;
       padding: 20px;
       background-color: white;
-      /* Set a fixed height to help with vertical centering */
       height: 140px;
+      z-index: 10;
     }
-    /* Main logo on the left */
+    /* Left: Main website logo */
     .logo {
       position: absolute;
       left: 20px;
@@ -29,7 +33,7 @@
     .logo img {
       height: 100px;
     }
-    /* Absolutely centered header text */
+    /* Center: Header text */
     .title {
       position: absolute;
       left: 50%;
@@ -39,7 +43,7 @@
       font-family: Impact, sans-serif;
       margin: 0;
     }
-    /* Right section: hamburger button & social media icons */
+    /* Right: Social Media Icons and Hamburger Menu */
     .header-right {
       position: absolute;
       right: 20px;
@@ -49,12 +53,61 @@
       align-items: center;
       gap: 10px;
     }
-    .hamburger img {
-      height: 40px;
-      cursor: pointer;
+    /* Social Media Icons */
+    .social-links a {
+      text-decoration: none;
+      border: none;
+      outline: none;
+      display: inline-block;
     }
     .social-links a img {
       height: 40px;
+    }
+    /* Hamburger styling and dropdown menu */
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+    }
+    .hamburger img {
+      height: 40px;
+    }
+    .menu-list {
+      font-family: "Oswald", serif;
+      font-size: 35px;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+    }
+    /* Video Section */
+    .video-section {
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
     main {
       padding: 20px;
@@ -75,11 +128,9 @@
     </div>
     <!-- Center: Header text -->
     <div class="title">Maxim Voronin</div>
-    <!-- Right: Hamburger menu button & social media icons -->
+    <!-- Right: Social Media Icons and Hamburger Menu -->
     <div class="header-right">
-      <div class="hamburger">
-        <img src="assets/hamburger.png" alt="Menu">
-      </div>
+      <!-- Social Media Icons -->
       <div class="social-links">
         <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
           <img src="assets/youtubelogo.png" alt="YouTube">
@@ -91,13 +142,54 @@
           <img src="assets/facebooklogo.png" alt="Facebook">
         </a>
       </div>
+      <!-- Hamburger Menu (now to the right of social icons) -->
+      <div class="hamburger" id="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+        <!-- Dropdown Menu List -->
+        <div class="menu-list" id="menu-list">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="contact.html">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
     </div>
   </header>
+
+  <!-- Video Section with autoplay, muted, and loop -->
+  <section class="video-section">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/3V-hmadFxNk?autoplay=1&mute=1&loop=1&playlist=3V-hmadFxNk" 
+              frameborder="0" 
+              allow="autoplay; encrypted-media" 
+              allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
   <main>
     <p>This is the homepage of my website.</p>
   </main>
   <footer>
     &copy; 2025 My Website. All rights reserved.
   </footer>
+  
+  <!-- JavaScript to toggle the dropdown menu -->
+  <script>
+    // Toggle the menu-list when the hamburger is clicked
+    document.getElementById('hamburger').addEventListener('click', function(event) {
+      event.stopPropagation();
+      var menuList = document.getElementById('menu-list');
+      menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+    });
+    
+    // Close the menu if a click occurs outside the hamburger/menu-list
+    document.addEventListener('click', function() {
+      var menuList = document.getElementById('menu-list');
+      if (menuList.style.display === 'block') {
+        menuList.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
