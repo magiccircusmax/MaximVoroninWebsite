@@ -3,11 +3,13 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <!-- Import Impact and Oswald fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to My Website</title>
   <style>
+    /* General Styles */
     body {
       margin: 0;
       padding: 0;
@@ -23,7 +25,7 @@
       height: 140px;
       z-index: 10;
     }
-    /* Left: Main website logo */
+    /* Logo */
     .logo {
       position: absolute;
       left: 20px;
@@ -33,7 +35,7 @@
     .logo img {
       height: 100px;
     }
-    /* Center: Header text */
+    /* Header Title */
     .title {
       position: absolute;
       left: 50%;
@@ -43,7 +45,7 @@
       font-family: Impact, sans-serif;
       margin: 0;
     }
-    /* Right: Social Media Icons and Hamburger Menu */
+    /* Social Icons & Hamburger */
     .header-right {
       position: absolute;
       right: 20px;
@@ -53,7 +55,6 @@
       align-items: center;
       gap: 10px;
     }
-    /* Social Media Icons */
     .social-links a {
       text-decoration: none;
       border: none;
@@ -63,7 +64,6 @@
     .social-links a img {
       height: 40px;
     }
-    /* Hamburger styling and dropdown menu */
     .hamburger {
       cursor: pointer;
       position: relative;
@@ -72,7 +72,7 @@
       height: 40px;
     }
     .menu-list {
-      font-family: "Oswald", serif;
+      font-family: "Oswald", sans-serif;
       font-size: 35px;
       display: none;
       position: absolute;
@@ -80,7 +80,7 @@
       right: 0;
       background: white;
       border: 1px solid #ccc;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       padding: 10px;
       z-index: 9999;
     }
@@ -89,7 +89,7 @@
       text-decoration: none;
       color: black;
       margin: 5px 0;
-      white-space: nowrap; /* Prevents wrapping */
+      white-space: nowrap;
     }
     /* Video Section */
     .video-section {
@@ -99,7 +99,7 @@
     }
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%; /* 16:9 ratio */
       height: 0;
       overflow: hidden;
     }
@@ -110,7 +110,38 @@
       width: 100%;
       height: 100%;
     }
-    /* New About Section (Image Left, Text Right) */
+    /* Upcoming Shows Section */
+    .upcoming-shows {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      margin: 40px 0 20px;
+      text-align: center;
+    }
+    /* Upcoming Shows Carousel */
+    .upcoming-carousel {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      /* Remove grid from outer container */
+    }
+    /* Grid for upcoming shows cards */
+    .upcoming-carousel-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .upcoming-carousel-card {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      font-family: "Oswald", sans-serif;
+      font-size: 45px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    /* About Me Section */
     .about-section {
       display: flex;
       align-items: center;
@@ -118,53 +149,174 @@
       padding: 40px 20px;
       gap: 20px;
     }
-    .about-section .about-image {
+    .about-image {
       flex: 1;
       max-width: 50%;
     }
-    .about-section .about-image img {
+    .about-image img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .about-section .about-text {
+    .about-text {
       flex: 1;
       max-width: 50%;
       text-align: left;
-      /* Updated font sizes */
       font-size: 28px;
     }
-    .about-section .about-text h2 {
+    .about-text h2 {
       margin-top: 0;
       font-family: Impact, sans-serif;
       font-size: 48px;
     }
-    .about-section .about-text p {
+    .about-text p {
       font-family: "Oswald", sans-serif;
       font-size: 28px;
     }
+    /* Testimonial Carousel Section (Original) */
+    .carousel-section {
+      position: relative;
+      margin-top: 40px;
+      padding: 20px;
+    }
+    .carousel-container {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    .carousel-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 600px;
+      padding: 40px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      display: none;
+      font-family: "Oswald", sans-serif;
+      font-size: 45px;
+      line-height: 1.4;
+      text-align: center;
+      opacity: 0;
+    }
+    .carousel-card.active {
+      display: block;
+    }
+    .carousel-card p:nth-child(2) {
+      font-weight: bold;
+    }
+    /* Keyframe Animations for Testimonial Carousel */
+    @keyframes slideInFromLeft {
+      from {
+        transform: translate(-150%, -50%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInFromRight {
+      from {
+        transform: translate(150%, -50%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    @keyframes slideOutToLeft {
+      from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: translate(-150%, -50%);
+        opacity: 0;
+      }
+    }
+    @keyframes slideOutToRight {
+      from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: translate(150%, -50%);
+        opacity: 0;
+      }
+    }
+    .slide-in-from-left {
+      animation: slideInFromLeft 0.5s ease-out forwards;
+    }
+    .slide-in-from-right {
+      animation: slideInFromRight 0.5s ease-out forwards;
+    }
+    .slide-out-to-left {
+      animation: slideOutToLeft 0.5s ease-out forwards;
+    }
+    .slide-out-to-right {
+      animation: slideOutToRight 0.5s ease-out forwards;
+    }
+    /* Navigation Buttons for Testimonial Carousel */
+    .carousel-prev,
+    .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 100;
+    }
+    .carousel-prev {
+      left: 10px;
+    }
+    .carousel-next {
+      right: 10px;
+    }
+    /* Main Content & Footer */
     main {
       padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      font-family: "Oswald", sans-serif;
+    }
+    main h1 {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    main p {
+      font-size: 28px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
     footer {
       background-color: #333;
       color: white;
       padding: 10px;
       text-align: center;
+      margin-top: 40px;
+      font-family: "Oswald", sans-serif;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <!-- Left: Main website logo -->
     <div class="logo">
       <img src="assets/mvlogo.jpeg" alt="Logo">
     </div>
-    <!-- Center: Header text -->
     <div class="title">Maxim Voronin</div>
-    <!-- Right: Social Media Icons and Hamburger Menu -->
     <div class="header-right">
-      <!-- Social Media Icons -->
       <div class="social-links">
         <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
           <img src="assets/youtubelogo.png" alt="YouTube">
@@ -176,22 +328,21 @@
           <img src="assets/facebooklogo.png" alt="Facebook">
         </a>
       </div>
-      <!-- Hamburger Menu (to the right of social icons) -->
       <div class="hamburger" id="hamburger">
         <img src="assets/hamburger.png" alt="Menu">
-        <!-- Dropdown Menu List -->
         <div class="menu-list" id="menu-list">
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
           <a href="lessons.html">Lessons</a>
+          <a href="directing-consulting.html">Directing/Consulting</a>
           <a href="contact.html">Contact</a>
           <a href="portfolio.html">Portfolio</a>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Video Section with autoplay, muted, and loop -->
+  
+  <!-- Video Section -->
   <section class="video-section">
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/3V-hmadFxNk?autoplay=1&mute=1&loop=1&playlist=3V-hmadFxNk" 
@@ -201,8 +352,31 @@
       </iframe>
     </div>
   </section>
-
-  <!-- New About Section (Image Left, Text Right) -->
+  
+  <!-- Upcoming Shows Section -->
+  <section class="upcoming-shows">
+    <h2>Upcoming Shows</h2>
+  </section>
+  
+  <!-- Upcoming Shows Grid: 3 Columns with Cards -->
+  <section class="upcoming-carousel">
+    <div class="upcoming-carousel-container">
+      <div class="upcoming-carousel-card">
+        <img src="assets/show1.jpg" alt="Show 1 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
+        Show Card 1 Description
+      </div>
+      <div class="upcoming-carousel-card">
+        <img src="assets/show2.jpg" alt="Show 2 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
+        Show Card 2 Description
+      </div>
+      <div class="upcoming-carousel-card">
+        <img src="assets/show3.jpg" alt="Show 3 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
+        Show Card 3 Description
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Me Section -->
   <section class="about-section">
     <div class="about-image">
       <img src="assets/aboutmecollage.jpg" alt="About Me Collage">
@@ -215,15 +389,78 @@
       </p>
     </div>
   </section>
-
+  
+  <!-- Testimonial Carousel Section -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-card active slide-in-from-left">
+        <p>“Best Magic Show In Ukraine”</p>
+        <p>1+1</p>
+      </div>
+      <div class="carousel-card">
+        <p>“5/5 STAR FOR THE FULL 4 MONTHS”</p>
+        <p>СТБ</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Las Vegas Level Magic Show, even better!”</p>
+        <p>Seattle Times</p>
+      </div>
+      <div class="carousel-card">
+        <p>“A Star With A Talent That Does Not Wait”</p>
+        <p>Vietnam News</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Unbelievable Skills”</p>
+        <p>CBS News</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Skills Never Seen Before In History”</p>
+        <p>NBC</p>
+      </div>
+      <div class="carousel-card">
+        <p>“A Lot For The World To Expect From This Young Man”</p>
+        <p>Genii Magazine</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Impressing European audiences with his amazing skill”</p>
+        <p>DG News</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Received a well deserved prize from the National Circus of Ukraine”</p>
+        <p>Dumskaya</p>
+      </div>
+      <div class="carousel-card">
+        <p>“I could not stop smiling”</p>
+        <p>Odessa Live</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Outstanding never before seen”</p>
+        <p>Vietnam.vn</p>
+      </div>
+      <div class="carousel-card">
+        <p>“Will Be Dazzling Eureka”</p>
+        <p>Lost Coast Outpost</p>
+      </div>
+      <div class="carousel-card">
+        <p>“new sensational experiments…all genres of creativity, from which they create new impressions and a new circus.”</p>
+        <p>ДІМ</p>
+      </div>
+    </div>
+    <button class="carousel-prev">&#10094;</button>
+    <button class="carousel-next">&#10095;</button>
+  </section>
+  
+  <!-- Main Content -->
   <main>
     <p>This is the homepage of my website.</p>
   </main>
+  
+  <!-- Footer -->
   <footer>
     &copy; 2025 My Website. All rights reserved.
   </footer>
   
-  <!-- JavaScript to toggle the dropdown menu -->
+  <!-- JavaScript for Hamburger Menu -->
   <script>
     document.getElementById('hamburger').addEventListener('click', function(event) {
       event.stopPropagation();
@@ -237,5 +474,103 @@
       }
     });
   </script>
+  
+  <!-- JavaScript for Testimonial Carousel -->
+  <script>
+    const cards = document.querySelectorAll('.carousel-card');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    let currentCardIndex = 0;
+    
+    function transitionToCard(newIndex, direction) {
+      const oldCard = cards[currentCardIndex];
+      const newCard = cards[newIndex];
+      
+      newCard.classList.remove('slide-in-from-left', 'slide-in-from-right');
+      
+      if (direction === 'next') {
+        oldCard.classList.add('slide-out-to-left');
+      } else {
+        oldCard.classList.add('slide-out-to-right');
+      }
+      
+      setTimeout(() => {
+        oldCard.classList.remove('active', 'slide-out-to-left', 'slide-out-to-right');
+        newCard.classList.add('active');
+        if (direction === 'next') {
+          newCard.classList.add('slide-in-from-right');
+        } else {
+          newCard.classList.add('slide-in-from-left');
+        }
+        currentCardIndex = newIndex;
+      }, 500);
+    }
+    
+    nextButton.addEventListener('click', () => {
+      const newIndex = (currentCardIndex + 1) % cards.length;
+      transitionToCard(newIndex, 'next');
+    });
+    
+    prevButton.addEventListener('click', () => {
+      const newIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+      transitionToCard(newIndex, 'prev');
+    });
+  </script>
+  
+  <!-- Keyframe Animations -->
+  <style>
+    @keyframes slideInFromLeft {
+      from {
+        transform: translate(-150%, -50%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInFromRight {
+      from {
+        transform: translate(150%, -50%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    @keyframes slideOutToLeft {
+      from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: translate(-150%, -50%);
+        opacity: 0;
+      }
+    }
+    @keyframes slideOutToRight {
+      from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: translate(150%, -50%);
+        opacity: 0;
+      }
+    }
+    .slide-in-from-left {
+      animation: slideInFromLeft 0.5s ease-out forwards;
+    }
+    .slide-in-from-right {
+      animation: slideInFromRight 0.5s ease-out forwards;
+    }
+    .slide-out-to-left {
+      animation: slideOutToLeft 0.5s ease-out forwards;
+    }
+    .slide-out-to-right {
+      animation: slideOutToRight 0.5s ease-out forwards;
+    }
+  </style>
 </body>
 </html>

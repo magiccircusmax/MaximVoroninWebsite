@@ -3,12 +3,13 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Import both Impact and Oswald fonts -->
+  <!-- Import Impact and Oswald fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Directing/Consultation - Maxim Voronin</title>
   <style>
+    /* General Styles */
     body {
       margin: 0;
       padding: 0;
@@ -24,7 +25,7 @@
       height: 140px;
       z-index: 10;
     }
-    /* Left: Main website logo */
+    /* Logo */
     .logo {
       position: absolute;
       left: 20px;
@@ -34,7 +35,7 @@
     .logo img {
       height: 100px;
     }
-    /* Center: Header text */
+    /* Header Title */
     .title {
       position: absolute;
       left: 50%;
@@ -44,7 +45,7 @@
       font-family: Impact, sans-serif;
       margin: 0;
     }
-    /* Right: Social Media Icons and Hamburger Menu */
+    /* Social Icons & Hamburger */
     .header-right {
       position: absolute;
       right: 20px;
@@ -54,17 +55,13 @@
       align-items: center;
       gap: 10px;
     }
-    /* Social Media Icons */
     .social-links a {
       text-decoration: none;
-      border: none;
-      outline: none;
       display: inline-block;
     }
     .social-links a img {
       height: 40px;
     }
-    /* Hamburger styling and dropdown menu */
     .hamburger {
       cursor: pointer;
       position: relative;
@@ -92,22 +89,28 @@
       margin: 5px 0;
       white-space: nowrap;
     }
+    /* Main Content */
     main {
       padding: 20px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 160px auto 40px; /* Ensure there's space below header */
       text-align: left;
       font-family: "Oswald", sans-serif;
     }
-    main h1 {
+    h1 {
       font-family: Impact, sans-serif;
       font-size: 48px;
       text-align: center;
-      margin-top: 40px;
+      margin-bottom: 20px;
     }
-    main p {
+    .content {
       font-size: 28px;
       line-height: 1.6;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .content p {
       margin-bottom: 20px;
     }
     footer {
@@ -115,20 +118,17 @@
       color: white;
       padding: 10px;
       text-align: center;
-      margin-top: 40px;
       font-family: "Oswald", sans-serif;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <!-- Left: Main website logo -->
     <div class="logo">
       <img src="assets/mvlogo.jpeg" alt="Logo">
     </div>
-    <!-- Center: Header text -->
     <div class="title">Maxim Voronin</div>
-    <!-- Right: Social Media Icons and Hamburger Menu -->
     <div class="header-right">
       <div class="social-links">
         <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
@@ -140,4 +140,58 @@
         <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
           <img src="assets/facebooklogo.png" alt="Facebook">
         </a>
-      </
+      </div>
+      <div class="hamburger" id="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+        <div class="menu-list" id="menu-list">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="directing-consulting.html">Directing/Consultation</a>
+          <a href="contact.html">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <h1>Directing/Consultation</h1>
+    <div class="content">
+      <p><strong>Act Creation &amp; Show Development with Maxim Voronin</strong></p>
+      <p>
+        Maxim Voronin has directed and refined a wide range of shows and acts for artists worldwide. Whether you're an artist struggling to develop a compelling act or a producer seeking to create a high-quality show, Maxim is here to help.
+      </p>
+      <p>
+        With expertise in choreography, pantomime, and acting, Maxim will guide you in shaping unique ideas and elevating your performance. He also provides support in technical aspects such as engineering, costume design, lighting, and music selection to ensure every detail enhances your act.
+      </p>
+      <p>
+        Already have an act or show but want to take it to the next level? Maxim offers consulting services to help integrate new effects, props, and illusions. For example, if you envision a dramatic disappearance effect in your show, he will work with you to conceptualize the illusion, connect you with the right prop designers, determine a fair budget, and seamlessly integrate it into your performance with precision and professionalism.
+      </p>
+      <p>
+        If you're interested in working with Maxim, whether in-person or online, send an email to <a href="mailto:magiccircusmax@gmail.com">magiccircusmax@gmail.com</a> outlining your goals. A free 30-minute consultation will be scheduled to discuss your vision, develop a plan of action, and provide a personalized quote.
+      </p>
+    </div>
+  </main>
+  
+  <footer>
+    &copy; 2025 My Website. All rights reserved.
+  </footer>
+  
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function(event) {
+      event.stopPropagation();
+      var menuList = document.getElementById('menu-list');
+      menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+    });
+    document.addEventListener('click', function() {
+      var menuList = document.getElementById('menu-list');
+      if (menuList.style.display === 'block') {
+        menuList.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
