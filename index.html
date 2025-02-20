@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/jpeg" href="assets/favicon.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Import Impact and Oswald fonts -->
@@ -123,7 +124,6 @@
       max-width: 1200px;
       margin: 0 auto 40px;
       padding: 20px;
-      /* Remove grid from outer container */
     }
     /* Grid for upcoming shows cards */
     .upcoming-carousel-container {
@@ -206,66 +206,32 @@
     .carousel-card p:nth-child(2) {
       font-weight: bold;
     }
-    /* Keyframe Animations for Testimonial Carousel */
     @keyframes slideInFromLeft {
-      from {
-        transform: translate(-150%, -50%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
+      from { transform: translate(-150%, -50%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
     }
     @keyframes slideInFromRight {
-      from {
-        transform: translate(150%, -50%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
+      from { transform: translate(150%, -50%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
     }
     @keyframes slideOutToLeft {
-      from {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-      to {
-        transform: translate(-150%, -50%);
-        opacity: 0;
-      }
+      from { transform: translate(-50%, -50%); opacity: 1; }
+      to { transform: translate(-150%, -50%); opacity: 0; }
     }
     @keyframes slideOutToRight {
-      from {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-      to {
-        transform: translate(150%, -50%);
-        opacity: 0;
-      }
+      from { transform: translate(-50%, -50%); opacity: 1; }
+      to { transform: translate(150%, -50%); opacity: 0; }
     }
-    .slide-in-from-left {
-      animation: slideInFromLeft 0.5s ease-out forwards;
-    }
-    .slide-in-from-right {
-      animation: slideInFromRight 0.5s ease-out forwards;
-    }
-    .slide-out-to-left {
-      animation: slideOutToLeft 0.5s ease-out forwards;
-    }
-    .slide-out-to-right {
-      animation: slideOutToRight 0.5s ease-out forwards;
-    }
-    /* Navigation Buttons for Testimonial Carousel */
+    .slide-in-from-left { animation: slideInFromLeft 0.5s ease-out forwards; }
+    .slide-in-from-right { animation: slideInFromRight 0.5s ease-out forwards; }
+    .slide-out-to-left { animation: slideOutToLeft 0.5s ease-out forwards; }
+    .slide-out-to-right { animation: slideOutToRight 0.5s ease-out forwards; }
     .carousel-prev,
     .carousel-next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       border: none;
       color: white;
       font-size: 24px;
@@ -274,13 +240,8 @@
       border-radius: 50%;
       z-index: 100;
     }
-    .carousel-prev {
-      left: 10px;
-    }
-    .carousel-next {
-      right: 10px;
-    }
-    /* Main Content & Footer */
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
     main {
       padding: 20px;
       max-width: 1200px;
@@ -345,7 +306,8 @@
   <!-- Video Section -->
   <section class="video-section">
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/3V-hmadFxNk?autoplay=1&mute=1&loop=1&playlist=3V-hmadFxNk" 
+      <!-- Updated embed URL with video ID g0E94DmstGo, autoplay, mute, loop, and playlist -->
+      <iframe src="https://www.youtube.com/embed/g0E94DmstGo?autoplay=1&mute=1&loop=1&playlist=g0E94DmstGo" 
               frameborder="0" 
               allow="autoplay; encrypted-media" 
               allowfullscreen>
@@ -362,16 +324,26 @@
   <section class="upcoming-carousel">
     <div class="upcoming-carousel-container">
       <div class="upcoming-carousel-card">
-        <img src="assets/show1.jpg" alt="Show 1 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
-        Show Card 1 Description
+        <img src="assets/upcoming1.jpeg" alt="Show 1 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
+        Magic With A Twist<br>
+        <strong>
+          <a href="https://www.venmo.com/u/magiccircusmax" target="_blank" style="text-decoration: none; color: inherit;">
+            Tickets
+          </a>
+        </strong>
       </div>
-      <div class="upcoming-carousel-card">
-        <img src="assets/show2.jpg" alt="Show 2 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
-        Show Card 2 Description
+      <div class="upcoming-carousel-card" style="display: flex; flex-direction: column; justify-content: flex-end;">
+        <img src="assets/upcoming2.jpg" alt="Show 2 Poster" style="display: block; margin: 0 auto; width:100%; height:auto; border-radius:10px;"><br>
+        Magic World Vienna<br>
+        <strong>
+          <a href="https://www.magicworld.at/en/shows-tickets" target="_blank" style="text-decoration: none; color: inherit;">
+            Tickets
+          </a>
+        </strong>
       </div>
-      <div class="upcoming-carousel-card">
-        <img src="assets/show3.jpg" alt="Show 3 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
-        Show Card 3 Description
+      <div class="upcoming-carousel-card" style="display: flex; flex-direction: column; justify-content: flex-end;">
+        <img src="assets/mvlogo.jpeg" alt="Show 3 Poster" style="width:100%; height:auto; border-radius:10px;"><br>
+        <strong style="color: black;">Coming Soon...</strong>
       </div>
     </div>
   </section>
@@ -390,7 +362,7 @@
     </div>
   </section>
   
-  <!-- Testimonial Carousel Section -->
+  <!-- Testimonial Carousel Section (Original) -->
   <section class="carousel-section">
     <div class="carousel-container">
       <div class="carousel-card active slide-in-from-left">
@@ -442,7 +414,7 @@
         <p>Lost Coast Outpost</p>
       </div>
       <div class="carousel-card">
-        <p>“new sensational experiments…all genres of creativity, from which they create new impressions and a new circus.”</p>
+        <p>“Creative genres, positive impressions, and a new circus.”</p>
         <p>ДІМ</p>
       </div>
     </div>
@@ -520,57 +492,25 @@
   <!-- Keyframe Animations -->
   <style>
     @keyframes slideInFromLeft {
-      from {
-        transform: translate(-150%, -50%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
+      from { transform: translate(-150%, -50%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
     }
     @keyframes slideInFromRight {
-      from {
-        transform: translate(150%, -50%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
+      from { transform: translate(150%, -50%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
     }
     @keyframes slideOutToLeft {
-      from {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-      to {
-        transform: translate(-150%, -50%);
-        opacity: 0;
-      }
+      from { transform: translate(-50%, -50%); opacity: 1; }
+      to { transform: translate(-150%, -50%); opacity: 0; }
     }
     @keyframes slideOutToRight {
-      from {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-      to {
-        transform: translate(150%, -50%);
-        opacity: 0;
-      }
+      from { transform: translate(-50%, -50%); opacity: 1; }
+      to { transform: translate(150%, -50%); opacity: 0; }
     }
-    .slide-in-from-left {
-      animation: slideInFromLeft 0.5s ease-out forwards;
-    }
-    .slide-in-from-right {
-      animation: slideInFromRight 0.5s ease-out forwards;
-    }
-    .slide-out-to-left {
-      animation: slideOutToLeft 0.5s ease-out forwards;
-    }
-    .slide-out-to-right {
-      animation: slideOutToRight 0.5s ease-out forwards;
-    }
+    .slide-in-from-left { animation: slideInFromLeft 0.5s ease-out forwards; }
+    .slide-in-from-right { animation: slideInFromRight 0.5s ease-out forwards; }
+    .slide-out-to-left { animation: slideOutToLeft 0.5s ease-out forwards; }
+    .slide-out-to-right { animation: slideOutToRight 0.5s ease-out forwards; }
   </style>
 </body>
 </html>
