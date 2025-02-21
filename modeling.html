@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/jpeg" href="assets/favicon.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import both Impact and Oswald fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modeling - Maxim Voronin</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: white;
+      height: 140px;
+      z-index: 10;
+    }
+    /* Header elements (same as homepage) */
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo img {
+      height: 100px;
+    }
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: Impact, sans-serif;
+      margin: 0;
+    }
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .social-links a {
+      text-decoration: none;
+      display: inline-block;
+    }
+    .social-links a img {
+      height: 40px;
+    }
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+    }
+    .hamburger img {
+      height: 40px;
+    }
+    .menu-list {
+      font-family: "Oswald", sans-serif;
+      font-size: 35px;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+      white-space: nowrap;
+    }
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      text-align: left;
+      font-family: "Oswald", sans-serif;
+    }
+    main h1 {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    /* Section Headings */
+    .section-heading {
+      font-weight: bold;
+      font-size: 32px;
+      margin: 20px 0 10px;
+      text-align: left;
+    }
+    /* Section Container */
+    .section {
+      margin-bottom: 40px;
+    }
+    /* Gallery grid for each modeling section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .gallery-grid img.equal-dimensions {
+      height: 300px; /* Adjust as needed */
+      object-fit: cover;
+    }
+    footer {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+      margin-top: 40px;
+    }
+    
+     /* ---------------- Mobile Styles ---------------- */
+    @media (max-width: 768px) {
+      header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        height: auto;
+      }
+      .logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        position: static;
+        text-align: left;
+      }
+      .logo img {
+        height: 60px;
+        margin-top: 50px;
+      }
+      .header-right {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+      }
+      .title {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        text-align: center;
+        margin-top: -10px;
+        font-size: 40px;
+        position: static;
+        transform: none;
+      }
+      main {
+        padding: 10px;
+      }
+      main h1 {
+        font-size: 36px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .section-heading {
+        font-size: 24px;
+        margin: 15px 0 5px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+    <div class="title">Maxim Voronin</div>
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
+          <img src="assets/youtubelogo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/magiccircusmax/" target="_blank">
+          <img src="assets/instagramlogo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
+          <img src="assets/facebooklogo.png" alt="Facebook">
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+        <div class="menu-list" id="menu-list">
+           <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="videos.html">Videos</a>
+          <a href="modeling.html">Modeling</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="directing-consultation.html">Directing/Consultation</a>
+          <a href="merch.html">Merch</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <h1>Modeling</h1>
+    
+    <!-- Portrait Section -->
+    <section class="section">
+      <div class="section-heading">Portrait</div>
+      <div class="gallery-grid">
+        <img src="mphotos/h.JPG" alt="Portrait 0">
+        <img src="mphotos/h2.JPG" alt="Portrait 2">
+        <img src="mphotos/h5.JPG" alt="Portrait 5">
+        <img src="mphotos/h6.JPG" alt="Portrait 6">
+        <img src="mphotos/h7.JPG" alt="Portrait 7">
+        <img src="mphotos/h8.JPG" alt="Portrait 8">
+        <img src="mphotos/h9.JPG" alt="Portrait 9">
+        <img src="mphotos/h10.JPG" alt="Portrait 10">
+        <img src="mphotos/h16.JPG" alt="Portrait 16">
+        <img src="mphotos/h18.JPG" alt="Portrait 18">
+        <img src="mphotos/h20.JPG" alt="Portrait 20">
+        <img src="mphotos/h23.JPG" alt="Portrait 23">
+        <img src="mphotos/h24.JPG" alt="Portrait 24">
+        <img src="mphotos/h25.JPG" alt="Portrait 25">
+        <img src="mphotos/h12.JPG" alt="Portrait 12">
+        <!-- Portrait 3, 4, 19, 11, 22 with forced dimensions -->
+        <img src="mphotos/h3.JPG" alt="Portrait 3" class="equal-dimensions">
+        <img src="mphotos/h4.JPG" alt="Portrait 4" class="equal-dimensions">
+        <img src="mphotos/h19.JPG" alt="Portrait 19" class="equal-dimensions">
+        <img src="mphotos/h11.JPG" alt="Portrait 11" class="equal-dimensions">
+        <img src="mphotos/h22.JPG" alt="Portrait 22" class="equal-dimensions">
+      </div>
+    </section>
+    
+    <!-- Circus Section -->
+    <section class="section">
+      <div class="section-heading">Circus</div>
+      <div class="gallery-grid">
+        <!-- Insert your updated Circus images here -->
+        <!-- (Using your previously provided list) -->
+        <img src="mphotos/n4.jpeg" alt="Circus Image 17">
+        <img src="mphotos/n3.jpeg" alt="Circus Image 18">
+        <img src="mphotos/s4.jpeg" alt="Circus Image 1">
+        <img src="mphotos/s3.jpeg" alt="Circus Image 3">
+        <img src="mphotos/s1.jpeg" alt="Circus Image 5">
+        <img src="mphotos/s3.JPG" alt="Circus Image 2" class="equal-dimensions">
+        <img src="mphotos/r3.jpeg" alt="Circus Image 6" class="equal-dimensions">
+        <img src="mphotos/r2.jpeg" alt="Circus Image 7" class="equal-dimensions">
+        <img src="mphotos/n6.JPG" alt="Circus Image 15" class="equal-dimensions">
+        <img src="mphotos/n.JPG" alt="Circus Image 21" class="equal-dimensions">
+        <img src="mphotos/p3.JPG" alt="Circus Image 9">
+        <img src="mphotos/n9.JPG" alt="Circus Image 12">
+        <img src="mphotos/n8.JPG" alt="Circus Image 13">
+        <img src="mphotos/n7.JPG" alt="Circus Image 14">
+        <img src="mphotos/n5.jpeg" alt="Circus Image 16">
+        <img src="mphotos/d3.jpeg" alt="Circus Image 35" class="equal-dimensions">
+        <img src="mphotos/d.JPG" alt="Circus Image 38" class="equal-dimensions">
+        <img src="mphotos/n2.JPG" alt="Circus Image 19" class="equal-dimensions">
+        <img src="mphotos/n1.JPG" alt="Circus Image 20" class="equal-dimensions">
+        <img src="mphotos/g2.JPG" alt="Circus Image 30" class="equal-dimensions">
+        <img src="mphotos/g6.JPG" alt="Circus Image 26">
+        <img src="mphotos/g5.JPG" alt="Circus Image 27">
+        <img src="mphotos/g4.JPG" alt="Circus Image 28">
+        <img src="mphotos/g3.JPG" alt="Circus Image 29">
+        <img src="mphotos/d2.JPG" alt="Circus Image 36">
+        <img src="mphotos/l2.jpg" alt="Circus Image 24" class="equal-dimensions">
+        <img src="mphotos/l.JPG" alt="Circus Image 25" class="equal-dimensions">
+        <img src="mphotos/jc1.jpg" alt="Circus Image 56" class="equal-dimensions">
+        <img src="mphotos/jc2.jpg" alt="Circus Image 57" class="equal-dimensions">
+        <img src="mphotos/jc3.jpg" alt="Circus Image 58" class="equal-dimensions">
+        <img src="mphotos/b9.jpeg" alt="Circus Image 43">
+        <img src="mphotos/b5.JPG" alt="Circus Image 47">
+        <img src="mphotos/b4.jpeg" alt="Circus Image 48">
+        <img src="mphotos/b3.JPG" alt="Circus Image 49">
+        <img src="mphotos/b12.JPG" alt="Circus Image 59">
+        <img src="mphotos/g.JPG" alt="Circus Image 31" class="equal-dimensions">
+        <img src="mphotos/d6.JPG" alt="Circus Image 32" class="equal-dimensions">
+        <img src="mphotos/d5.JPG" alt="Circus Image 33" class="equal-dimensions">
+        <img src="mphotos/d4.JPG" alt="Circus Image 34" class="equal-dimensions">
+        <img src="mphotos/d1.JPG" alt="Circus Image 37" class="equal-dimensions">
+        <img src="mphotos/b8.jpeg" alt="Circus Image 44" class="equal-dimensions">
+        <img src="mphotos/z4.JPG" alt="Circus Image 61" class="equal-dimensions">
+        <img src="mphotos/z5.JPG" alt="Circus Image 60" class="equal-dimensions">
+        <img src="mphotos/c2.JPG" alt="Circus Image 39" class="equal-dimensions">
+        <img src="mphotos/c.jpeg" alt="Circus Image 40" class="equal-dimensions">
+        <img src="mphotos/b.jpg" alt="Circus Image 51" class="equal-dimensions">
+        <img src="mphotos/n.jpeg" alt="Circus Image 22" class="equal-dimensions">
+        <img src="mphotos/z3.JPG" alt="Circus Image 62" class="equal-dimensions">
+        <img src="mphotos/p1.JPG" alt="Circus Image 11" class="equal-dimensions">
+        <img src="mphotos/z1.jpeg" alt="Circus Image 64" class="equal-dimensions">
+        <img src="mphotos/b11.JPG" alt="Circus Image 41" class="equal-dimensions">
+        <img src="mphotos/b10.jpeg" alt="Circus Image 42" class="equal-dimensions">
+        <img src="mphotos/b7.jpeg" alt="Circus Image 45" class="equal-dimensions">
+        <img src="mphotos/b6.JPG" alt="Circus Image 46" class="equal-dimensions">
+        <img src="mphotos/b2.JPG" alt="Circus Image 50" class="equal-dimensions">
+        <img src="mphotos/z2.jpeg" alt="Circus Image 63" class="equal-dimensions">
+        <img src="mphotos/ae4.jpg" alt="Circus Image 52" class="equal-dimensions">
+        <img src="mphotos/ae3.jpg" alt="Circus Image 53" class="equal-dimensions">
+        <img src="mphotos/ae2.jpg" alt="Circus Image 54" class="equal-dimensions">
+        <img src="mphotos/ae1.jpg" alt="Circus Image 55" class="equal-dimensions">
+      </div>
+    </section>
+    
+    <!-- Magic Section -->
+    <section class="section">
+      <div class="section-heading">Magic</div>
+      <div class="gallery-grid">
+        <img src="mphotos/m6.jpg" alt="Magic 6" class="equal-dimensions">
+        <img src="mphotos/m3.jpg" alt="Magic 3" class="equal-dimensions">
+        <img src="mphotos/m12.jpg" alt="Magic 12" class="equal-dimensions">
+        <img src="mphotos/m7.jpg" alt="Magic 7" class="equal-dimensions">
+        <img src="mphotos/m4.jpg" alt="Magic 4" class="equal-dimensions">
+        <img src="mphotos/m5.jpg" alt="Magic 5" class="equal-dimensions">
+        <img src="mphotos/m15.jpg" alt="Magic 15" class="equal-dimensions">
+        <img src="mphotos/m10.jpg" alt="Magic 10" class="equal-dimensions">
+        <img src="mphotos/m11.jpg" alt="Magic 11" class="equal-dimensions">
+        <img src="mphotos/m13.jpg" alt="Magic 13" class="equal-dimensions">
+        <img src="mphotos/m14.jpg" alt="Magic 14">
+        <img src="mphotos/m8.jpg" alt="Magic 8">
+        <img src="mphotos/m17.jpg" alt="Magic 17">
+        <img src="mphotos/m18.jpg" alt="Magic 18">
+        <img src="mphotos/m.jpg" alt="Magic 1">
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 magiccircusmax. All rights reserved.
+  </footer>
+  
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function(event) {
+      event.stopPropagation();
+      var menuList = document.getElementById('menu-list');
+      menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+    });
+    document.addEventListener('click', function() {
+      var menuList = document.getElementById('menu-list');
+      if (menuList.style.display === 'block') {
+        menuList.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
