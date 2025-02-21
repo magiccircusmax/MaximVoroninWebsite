@@ -4,16 +4,16 @@
   <link rel="icon" type="image/jpeg" href="assets/favicon.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Import both Impact and Oswald fonts -->
+  <!-- Import Impact and Oswald fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lessons - Maxim Voronin</title>
+  <title>Directing/Consultation - Maxim Voronin</title>
   <style>
     html {
       scroll-behavior: smooth;
     }
-    /* General Styles */
+    /* ---------------- General Styles ---------------- */
     body {
       margin: 0;
       padding: 0;
@@ -30,7 +30,7 @@
       height: 140px;
       z-index: 10;
     }
-    /* Left: Main website logo */
+    /* Logo */
     .logo {
       position: absolute;
       left: 20px;
@@ -40,7 +40,7 @@
     .logo img {
       height: 100px;
     }
-    /* Center: Header text */
+    /* Header Title */
     .title {
       position: absolute;
       left: 50%;
@@ -50,7 +50,7 @@
       font-family: Impact, sans-serif;
       margin: 0;
     }
-    /* Right: Social Media Icons and Hamburger Menu */
+    /* Social Icons & Hamburger */
     .header-right {
       position: absolute;
       right: 20px;
@@ -60,17 +60,13 @@
       align-items: center;
       gap: 10px;
     }
-    /* Social Media Icons */
     .social-links a {
       text-decoration: none;
-      border: none;
-      outline: none;
       display: inline-block;
     }
     .social-links a img {
       height: 40px;
     }
-    /* Hamburger styling and dropdown menu */
     .hamburger {
       cursor: pointer;
       position: relative;
@@ -101,7 +97,7 @@
     /* ---------------- Main Content ---------------- */
     main {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 40px auto;
       text-align: left;
       font-family: "Oswald", sans-serif;
     }
@@ -109,61 +105,59 @@
       font-family: Impact, sans-serif;
       font-size: 48px;
       text-align: center;
-      margin-top: 40px;
-    }
-    /* Lessons Description Section */
-    .lessons-desc {
-      font-size: 28px;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      text-align: left;
-    }
-    .lessons-desc p {
       margin-bottom: 20px;
     }
-    /* Container for lessons text and image */
     .content-container {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
       gap: 40px;
+      align-items: flex-start;
       margin-top: 40px;
     }
-    .content-container .text-column {
+    /* Left: Text Column */
+    .text-column {
       flex: 2;
     }
-    .content-container .image-column {
+    /* Right: Video Column */
+    .video-column {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      justify-content: space-evenly;
       align-items: center;
+      margin-top: 60px;
+      gap: 40px;
     }
-    .content-container .image-column img {
+    .video-wrapper {
       width: 100%;
-      max-width: 350px;
-      height: auto;
-      display: block;
-      margin-top: 20px;
+      max-width: 400px;
     }
-    /* Teacher Info Section Underneath the Image */
-    .teacher-info {
-      font-size: 20px;
-      line-height: 1.6;
+    .video-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+    .video-wrapper p {
+      font-size: 24px;
       text-align: center;
-      font-family: "Oswald", sans-serif;
+      margin-top: 10px;
     }
+    .content p {
+      font-size: 28px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* ---------------- Footer ---------------- */
     footer {
       background-color: #333;
       color: white;
       padding: 10px;
       text-align: center;
-      margin-top: 40px;
       font-family: "Oswald", sans-serif;
     }
     /* ---------------- Mobile Styles ---------------- */
     @media (max-width: 768px) {
-      /* Mobile Header: two rows grid */
+      /* Mobile Header: two-row grid */
       header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -204,23 +198,23 @@
         position: static;
         transform: none;
       }
-      /* Add horizontal padding on mobile */
+      /* Add horizontal padding to main content on mobile */
       main {
         padding: 0 20px;
       }
-      /* Mobile adjustments for main content layout */
+      /* Stack the content container vertically */
       .content-container {
         flex-direction: column;
         align-items: center;
       }
-      .content-container .text-column,
-      .content-container .image-column {
+      .text-column,
+      .video-column {
         width: 100%;
       }
       main h1 {
         font-size: 36px;
       }
-      .lessons-desc {
+      .content p {
         font-size: 24px;
       }
     }
@@ -264,37 +258,33 @@
   </header>
   
   <main>
-    <h1>Lessons</h1>
+    <h1>Directing/Consultation</h1>
     <div class="content-container">
-      <!-- Text Column -->
-      <section class="text-column">
-        <div class="lessons-desc">
-          <p>
-            Maxim Voronin has learned magic from the teachers of Penn & Teller, Criss Angel, Lance Burton, Mat Franco, Yevgeniy Voronin, and Viktor Voitko.
-          </p>
-          <p>
-            His extensive experience in magic has taken him across the globe, with his innovative techniques earning him appearances on numerous television programs and invitations to consult on Broadway productions.
-          </p>
-          <p>
-            As a circus artist, Maxim Voronin has learned hand-balancing contortion from the best-known teacher in the world. With her school, she has produced world-class hand-balancers and contortionists such as Dima Shine, Pavel Stankevich, and Sergey Timofeev. Maxim continues his teacher’s school of hand-balancing contortion with additional development of strength conditioning and Mongolian contortion stretching.
-          </p>
-          <p>
-            For inquiries regarding in-person or online lessons with Maxim, please email <a href="mailto:magiccircusmax@gmail.com">magiccircusmax@gmail.com</a> with details of your goals and current skill level. A complimentary 30-minute consultation will be arranged to discuss your objectives, assess your proficiency, and outline a customized plan and quote.
-          </p>
-        </div>
+      <!-- Left: Text Column -->
+      <section class="text-column content">
+        <p><strong>Act Creation &amp; Show Development with Maxim Voronin</strong></p>
+        <p>
+          Maxim Voronin has directed and refined a wide range of shows and acts for artists worldwide. Whether you're an artist struggling to develop a compelling act or a producer seeking to create a high-quality show, Maxim is here to help.
+        </p>
+        <p>
+          With expertise in choreography, pantomime, and acting, Maxim will guide you in shaping unique ideas and elevating your performance. He also provides support in technical aspects such as engineering, costume design, lighting, and music selection to ensure every detail enhances your act.
+        </p>
+        <p>
+          Already have an act or show but want to take it to the next level? Maxim offers consulting services to help integrate new effects, props, and illusions. For example, if you envision a dramatic disappearance effect in your show, he will work with you to conceptualize the illusion, connect you with the right prop designers, determine a fair budget, and seamlessly integrate it into your performance with precision and professionalism.
+        </p>
+        <p>
+          If you're interested in working with Maxim, whether in-person or online, send an email to <a href="mailto:magiccircusmax@gmail.com">magiccircusmax@gmail.com</a> outlining your vision. A free 30-minute consultation will be scheduled to discuss your goals, develop a plan of action, and provide a personalized quote.
+        </p>
       </section>
-      
-      <!-- Image Column -->
-      <section class="image-column">
-        <img src="assets/lessons1.JPG" alt="Lessons Image">
-        <div class="teacher-info">
-          <p><strong>Who are Maxim Voronin's Teachers?</strong></p>
-          <p>
-            Magic - Johnny Thompson, Alexander Titarenko<br>
-            Hand-balancing Contortion - Nataliya Alexandrovna<br>
-            Juggling and Foot Juggling - Charly Castor<br>
-            Directing - Alexander Ivahno
-          </p>
+      <!-- Right: Video Column -->
+      <section class="video-column">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/LHRdcPmo0hI" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <p>Act Directed by Maxim Voronin</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/H8Bo5_zq1S4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <p>Show Directed by Maxim Voronin</p>
         </div>
       </section>
     </div>

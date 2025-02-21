@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/jpeg" href="assets/favicon.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import Impact and Oswald fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merch - Maxim Voronin</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    /* ---------------- Header (Desktop) ---------------- */
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: white;
+      height: 140px;
+      z-index: 10;
+    }
+    /* Logo */
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo img {
+      height: 100px;
+    }
+    /* Header Title */
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: Impact, sans-serif;
+      margin: 0;
+    }
+    /* Social Icons & Hamburger */
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .social-links a {
+      text-decoration: none;
+      display: inline-block;
+    }
+    .social-links a img {
+      height: 40px;
+    }
+    .hamburger {
+      cursor: pointer;
+      position: relative;
+    }
+    .hamburger img {
+      height: 40px;
+    }
+    .menu-list {
+      font-family: "Oswald", sans-serif;
+      font-size: 35px;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+      white-space: nowrap;
+    }
+    /* ---------------- Main Content ---------------- */
+   main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px; /* Removed the top margin */
+  text-align: left;
+  font-family: "Oswald", sans-serif;
+}
+    main h1 {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* Merch Container */
+    .merch-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .merch-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Ensure images inside merch cards are contained */
+    .merch-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    /* Custom styling for Merch Card 2 image */
+    .merch2-img {
+      width: 80%;
+      max-width: 250px;
+      margin: 0 auto;
+      display: block;
+    }
+    /* Custom styling for Merch Card 3 images */
+    .magicset-img {
+      width: 90%;
+      max-width: 245px; /* Slightly smaller */
+      margin: 0 auto;
+      display: block;
+    }
+    /* Carousel Styles (for Merch Card 1 & 3) */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      box-sizing: border-box;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .carousel-nav.prev {
+      left: 10px;
+    }
+    .carousel-nav.next {
+      right: 10px;
+    }
+    /* Merch Text Container: push text to bottom */
+    .merch-text {
+      margin-top: auto;
+    }
+    .merch-card h2 {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+    .merch-card p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .merch-card button {
+      font-size: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+      margin-top: 40px;
+    }
+    /* ---------------- Mobile Styles ---------------- */
+    @media (max-width: 768px) {
+      header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        height: auto;
+      }
+      .logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        position: static;
+        text-align: left;
+      }
+      .logo img {
+        height: 60px;
+        margin-top: 50px;
+      }
+      .header-right {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+      }
+      .title {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        text-align: center;
+        margin-top: -10px;
+        font-size: 40px;
+        position: static;
+        transform: none;
+      }
+      main {
+        padding: 0 20px;
+      }
+      .merch-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      main h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+    <div class="title">Maxim Voronin</div>
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@magiccircusmax" target="_blank">
+          <img src="assets/youtubelogo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/magiccircusmax/" target="_blank">
+          <img src="assets/instagramlogo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/maxim.voronin.1441/" target="_blank">
+          <img src="assets/facebooklogo.png" alt="Facebook">
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <img src="assets/hamburger.png" alt="Menu">
+        <div class="menu-list" id="menu-list">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="directing-consultation.html">Directing/Consultation</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="videos.html">Videos</a>
+          <a href="merch.html">Merch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <h1>Merch</h1>
+    <div class="merch-container">
+      <!-- Merch Card 1 with Carousel (Hoodies) -->
+      <div class="merch-card">
+        <div class="carousel" id="hoodieCarousel">
+          <img src="assets/mvhoodiefront.png" alt="Hoodie Front" class="active">
+          <img src="assets/mvhoodieback.png" alt="Hoodie Back">
+          <img src="assets/mvhoodiesizes.png" alt="Hoodie Sizes">
+          <button class="carousel-nav prev" onclick="prevSlide()">&#10094;</button>
+          <button class="carousel-nav next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <div class="merch-text">
+          <h2>Hoodies</h2>
+          <p>$40 Maxim Voronin Hoodies + Shipping</p>
+          <button onclick="window.location.href='https://venmo.com/u/magiccircusmax'">Buy Now</button>
+        </div>
+      </div>
+      <!-- Merch Card 2 -->
+      <div class="merch-card">
+        <div class="carousel">
+          <img src="assets/merchcards(2).jpg" alt="Merch Item 2" class="active merch2-img">
+        </div>
+        <div class="merch-text">
+          <h2>Cards</h2>
+          <p>$20 Maxim Voronin + Shipping</p>
+          <button onclick="window.location.href='https://venmo.com/u/magiccircusmax'">Buy Now</button>
+        </div>
+      </div>
+      <!-- Merch Card 3 with Carousel (Posters) -->
+      <div class="merch-card">
+        <div class="carousel" id="magicSetCarousel">
+          <img src="assets/circusbackdrop.jpg" alt="Poster 1" class="active magicset-img">
+          <img src="assets/IMG_4254.jpeg" alt="Poster 2" class="magicset-img">
+          <img src="assets/upcoming1.jpeg" alt="Poster 3" class="magicset-img">
+          <button class="carousel-nav prev" onclick="prevMagicSetSlide()">&#10094;</button>
+          <button class="carousel-nav next" onclick="nextMagicSetSlide()">&#10095;</button>
+        </div>
+       <div class="merch-text">
+  <h2>Posters</h2>
+  <p>Poster names: Dove, Duo, Shadow.</p>
+  <p>Each Poster $40 + Shipping</p>
+  <button onclick="window.location.href='https://venmo.com/u/magiccircusmax'">Buy Now</button>
+</div>
+
+      </div>
+      <!-- Add more merch cards as needed -->
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 magiccircusmax. All rights reserved.
+  </footer>
+  
+  <!-- JavaScript for Hamburger Menu and Carousels -->
+  <script>
+    // Toggle the menu-list when the hamburger is clicked
+    document.getElementById('hamburger').addEventListener('click', function(event) {
+      event.stopPropagation();
+      var menuList = document.getElementById('menu-list');
+      menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+    });
+    // Close the menu if a click occurs outside the hamburger/menu-list
+    document.addEventListener('click', function() {
+      var menuList = document.getElementById('menu-list');
+      if (menuList.style.display === 'block') {
+        menuList.style.display = 'none';
+      }
+    });
+  
+    // Simple Carousel for Merch Card 1 (Hoodies)
+    var currentSlide = 0;
+    var slides = document.querySelectorAll("#hoodieCarousel img");
+  
+    function showSlide(index) {
+      if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+      slides.forEach(function(slide, i) {
+        slide.classList.toggle("active", i === currentSlide);
+      });
+    }
+  
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+  
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+  
+    // Carousel for Merch Card 3 (Posters)
+    var currentMagicSetSlide = 0;
+    var magicSetSlides = document.querySelectorAll("#magicSetCarousel img");
+  
+    function showMagicSetSlide(index) {
+      if (index < 0) {
+        currentMagicSetSlide = magicSetSlides.length - 1;
+      } else if (index >= magicSetSlides.length) {
+        currentMagicSetSlide = 0;
+      } else {
+        currentMagicSetSlide = index;
+      }
+      magicSetSlides.forEach(function(slide, i) {
+        slide.classList.toggle("active", i === currentMagicSetSlide);
+      });
+    }
+  
+    function nextMagicSetSlide() {
+      showMagicSetSlide(currentMagicSetSlide + 1);
+    }
+  
+    function prevMagicSetSlide() {
+      showMagicSetSlide(currentMagicSetSlide - 1);
+    }
+  </script>
+</body>
+</html>

@@ -10,6 +10,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to My Website</title>
   <style>
+    html {
+    scroll-behavior: smooth;
+}
+   #contact-form-container {
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    background-color: #fffff; /* Matches yellow button color in the other sections */
+    color: #001F3F; /* Text color matches the background */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#thank-you-message {
+    display: none;
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+
+
     /* General Styles */
     body {
       margin: 0;
@@ -268,6 +315,99 @@
       margin-top: 40px;
       font-family: "Oswald", sans-serif;
     }
+@media (max-width: 768px) {
+  /* Change header to a grid with two rows */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+  
+  /* Logo in first row, left column */
+  .logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: static;
+    text-align: left;
+  }
+  
+  .logo img {
+    height: 60px;
+    margin-top: 50px;
+  }
+  
+  /* Social icons and hamburger in first row, right column */
+  .header-right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Title spans both columns in the second row, centered and moved higher */
+  .title {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin-top: -10px;  /* Negative margin to move it higher */
+    font-size: 40px;
+    align-self: start;
+    position: static;
+    transform: none;
+  }
+  
+  /* Other mobile adjustments remain unchanged */
+  .menu-list {
+    font-size: 25px;
+  }
+  
+  .upcoming-carousel-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .about-section {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .about-image, .about-text {
+    max-width: 100%;
+    flex: none;
+  }
+  
+  .about-text h2 {
+    font-size: 36px;
+  }
+  
+  .carousel-container {
+    height: 200px;
+  }
+  
+  .carousel-card {
+    padding: 20px;
+    font-size: 20px;
+  }
+  
+  footer {
+    padding: 15px;
+  }
+  
+  .footer-logo img {
+    height: 200px;
+  }
+  
+  .footer-card {
+    max-width: 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -295,9 +435,11 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
           <a href="lessons.html">Lessons</a>
-          <a href="directing-consulting.html">Directing/Consulting</a>
-          <a href="contact.html">Contact</a>
+          <a href="directing-consultation.html">Directing/Consultation</a>
+          <a href="#contact">Contact</a>
           <a href="portfolio.html">Portfolio</a>
+          <a href="videos.html">Videos</a>
+          <a href="merch.html">Merch</a>
         </div>
       </div>
     </div>
@@ -307,7 +449,7 @@
   <section class="video-section">
     <div class="video-container">
       <!-- Updated embed URL with video ID g0E94DmstGo, autoplay, mute, loop, and playlist -->
-      <iframe src="https://www.youtube.com/embed/g0E94DmstGo?autoplay=1&mute=1&loop=1&playlist=g0E94DmstGo" 
+      <iframe src="https://www.youtube.com/embed/FCw3qG5kX5g?autoplay=1&mute=1&loop=1" 
               frameborder="0" 
               allow="autoplay; encrypted-media" 
               allowfullscreen>
@@ -422,16 +564,6 @@
     <button class="carousel-next">&#10095;</button>
   </section>
   
-  <!-- Main Content -->
-  <main>
-    <p>This is the homepage of my website.</p>
-  </main>
-  
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 My Website. All rights reserved.
-  </footer>
-  
   <!-- JavaScript for Hamburger Menu -->
   <script>
     document.getElementById('hamburger').addEventListener('click', function(event) {
@@ -512,5 +644,143 @@
     .slide-out-to-left { animation: slideOutToLeft 0.5s ease-out forwards; }
     .slide-out-to-right { animation: slideOutToRight 0.5s ease-out forwards; }
   </style>
+
+<!-- Footer with Contact Form -->
+<footer id="contact">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="assets/mvlogo.jpeg" alt="Logo">
+    </div>
+     <div id="contact-form-container">
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="thank-you-message">
+            <p>Thank you for your message! We'll get back to you soon.</p>
+        </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const form = document.getElementById('contact-form');
+const thankYouMessage = document.getElementById('thank-you-message');
+
+form.addEventListener('submit', async function (event) {
+event.preventDefault(); // Prevent the default form submission
+
+
+// Assuming you've already validated the form fields here
+
+// Display the thank you message
+thankYouMessage.style.display = 'block';
+
+// Hide the form
+form.style.display = 'none';
+
+// Send the form data to Formspree using fetch
+const formData = new FormData(form);
+try {
+await fetch('https://formspree.io/f/xldgzpzb', {
+method: 'POST',
+headers: {
+'Accept': 'application/json',
+},
+body: formData,
+});
+} catch (error) {
+console.error('Error submitting form:', error);
+}
+});
+});
+</script>
+
+<!-- Copyright Section -->
+  <div class="copyright">
+    &copy; 2025 magiccircusmax. All rights reserved.
+  </div>
+
+<!-- Footer Styles -->
+<style>
+  footer {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .footer-logo img {
+    height: 400px; /* Keeping your logo size as sent */
+  }
+  .footer-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .footer-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-card input,
+  .footer-card textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-card textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  .footer-card button {
+  background-color: #000; /* Changed from #333 to #000 */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+  @media (max-width: 768px) {
+    .footer-container {
+      align-items: center;
+    }
+    .footer-card {
+      max-width: 90%;
+      margin-top: 20px;
+    }
+  }
+</style>
 </body>
 </html>

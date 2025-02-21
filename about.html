@@ -10,6 +10,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Maxim Voronin</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* ---------------- General Styles ---------------- */
     body {
       margin: 0;
       padding: 0;
@@ -18,6 +22,7 @@
       font-family: Arial, sans-serif;
       text-align: center;
     }
+    /* ---------------- Header (Desktop) ---------------- */
     header {
       position: relative;
       padding: 20px;
@@ -93,17 +98,18 @@
       margin: 5px 0;
       white-space: nowrap;
     }
+    /* ---------------- Main Content ---------------- */
     main {
-      padding: 20px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       text-align: left;
+      font-family: "Oswald", sans-serif;
     }
     main h1 {
       font-family: Impact, sans-serif;
       font-size: 48px;
-      margin-top: 40px;
       text-align: center;
+      margin-bottom: 10px;
     }
     main p {
       font-family: "Oswald", sans-serif;
@@ -128,29 +134,34 @@
     .bio-section p {
       margin-bottom: 20px;
     }
-    /* Resume Section styling remains unchanged */
+    /* Resume Section styling */
     .resume-section {
-      white-space: pre-line;
       font-family: "Oswald", sans-serif;
       font-size: 22px;
       line-height: 1.6;
-      margin-top: 20px;
+      margin-top: 10px;
     }
-    .resume-section strong {
-      font-weight: 700;
-      font-size: 24px;
+    .resume-button {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      font-size: 28px;
+      text-decoration: none;
+      padding: 3px 8px;
+      border-radius: 5px;
+      margin-top: 0;
     }
     /* Gallery Section */
     .gallery-section {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 40px;  /* Increased gap between images */
+      gap: 40px;
       align-items: center;
     }
     .gallery-section img {
       width: 100%;
-      max-width: 500px;
+      max-width: 300px;
       height: auto;
       display: block;
     }
@@ -161,6 +172,72 @@
       text-align: center;
       margin-top: 40px;
     }
+    /* ---------------- Mobile Styles ---------------- */
+    @media (max-width: 768px) {
+      /* Mobile Header: two rows grid */
+      header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        height: auto; /* Let height adjust */
+      }
+      /* Logo in first row, left column */
+      .logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        position: static;
+        text-align: left;
+      }
+      .logo img {
+        height: 60px;
+        margin-top: 50px; /* Adjust if needed */
+      }
+      /* Social icons and hamburger in first row, right column */
+      .header-right {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+      }
+      /* Title spans both columns in the second row, centered */
+      .title {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        text-align: center;
+        margin-top: -10px; /* Adjust to move higher if desired */
+        font-size: 40px;
+        position: static;
+        transform: none;
+      }
+      /* Add horizontal padding ("cushions") for main content */
+      main {
+        padding: 0 20px;
+      }
+      /* Stack the content container vertically */
+      .content-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .bio-section,
+      .gallery-section {
+        width: 100%;
+      }
+      .bio-section {
+        font-size: 20px;
+      }
+      main h1 {
+        font-size: 36px;
+      }
+      main p {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -169,8 +246,6 @@
     <div class="logo">
       <img src="assets/mvlogo.jpeg" alt="Logo">
     </div>
-    <!-- Center: Header text -->
-    <div class="title">Maxim Voronin</div>
     <!-- Right: Social Media Icons and Hamburger Menu -->
     <div class="header-right">
       <div class="social-links">
@@ -190,101 +265,63 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
           <a href="lessons.html">Lessons</a>
-          <a href="directing-consulting.html">Directing/Consulting</a>
-          <a href="contact.html">Contact</a>
+          <a href="directing-consultation.html">Directing/Consultation</a>
+          <a href="index.html#contact">Contact</a>
           <a href="portfolio.html">Portfolio</a>
+          <a href="videos.html">Videos</a>
+          <a href="merch.html">Merch</a>
         </div>
       </div>
     </div>
+    <!-- Second row: Header text -->
+    <div class="title">Maxim Voronin</div>
   </header>
   
   <main>
     <h1>About Me</h1>
-    <p class="intro" style="font-family:Impact, sans-serif; font-size:28px; font-weight:700; text-align:center;">
-      Maxim Voronin is a magician, contortionist, actor, model, and juggler. He is also a stage director and consultant.
+    <p class="intro" style="font-family: Impact, sans-serif; font-size: 28px; font-weight: 700; text-align: center;">
+      Maxim Voronin is a magician, contortionist, model, juggler, and stage director.
     </p>
     
     <div class="content-container">
       <!-- Bio Section with Biography and Resume -->
       <section class="bio-section">
         <p>
-          Born in San Francisco, California, Maxim was immersed in the world of cabaret and theater from an early age. As a second-generation artist, he followed in the illustrious footsteps of his parents, Yevgeniy Voronin, a world-class magician, and Svetlana Perekhodova, a one-of-a-kind contortionist. In 2022, Maxim graduated with honors from the College program at the Kyiv Municipal Academy of Variety and Circus Arts earning distinction as a stage director and circus artist. He apprenticed under the renowned magician Johnny Thompson (Tomsoni & Co.) and spent four years learning from his father's magic teacher, Alexander Titarenko.
+          Born in San Francisco, California, Maxim was immersed in the world of cabaret and theater from an early age. As a second-generation artist, he followed in the illustrious footsteps of his parents, Yevgeniy Voronin—a world-class magician—and Svetlana Perekhodova—a one-of-a-kind contortionist. In 2022, Maxim graduated with honors from the Kyiv Municipal Academy of Variety and Circus Arts, earning distinction as a stage director and circus artist. He apprenticed under the renowned magician Johnny Thompson (Tomsoni & Co.) and spent four years learning from his father's magic teacher, Alexander Titarenko.
         </p>
         <p>
-          Maxim has performed in movies like <em>Slava The Dog</em> and <em>Magic Hands of Chance</em>. You can also see him on TV shows like <em>Tu Si Que Vales</em> and <em>The Gong Show</em>. He has also modeled in fashion shows across Europe, Eastern Europe, Asia, and the USA.
+          Maxim has performed in movies like <em>Slava The Dog</em> and <em>Magic Hands of Chance</em>, and you can see him on TV shows like <em>Tu Si Que Vales</em> and <em>The Gong Show</em>. He has modeled in fashion shows across Europe, Eastern Europe, Asia, and the USA.
         </p>
         <p>
-          By the age of 19, Maxim Voronin had already directed and co-produced <em>"History of Magic"</em>, the most acclaimed and successful magic show in Ukraine, alongside Vladimir Koshevoy. To date, Maxim has performed internationally and founded his own entertainment company. With his extensive experience in the arts, he promises to deliver an unparalleled show that captivates and amazes audiences.
+          By the age of 19, Maxim had directed and co-produced <em>"History of Magic"</em>, the most acclaimed magic show in Ukraine, alongside Vladimir Koshevoy. To date, he has performed internationally and founded his own entertainment company.
         </p>
         <p>
           <strong>Education</strong><br>
-          In 2022, Maxim completed the full college course at the Kyiv Municipal Academy of Variety and Circus Arts, receiving two bachelor diplomas with honors in:<br>
-          - Culture and Arts (Performing Arts)<br>
+          In 2022, Maxim completed the full college course at the Kyiv Municipal Academy of Variety and Circus Arts, earning two bachelor diplomas with honors in:
+          <br>- Culture and Arts (Performing Arts)<br>
           - Culture and Arts (Directing of Variety, Theatrical Spectacle and Circus)
         </p>
-        <p>
-          See below resume
-        </p>
+        
         <div class="resume-section">
-          <strong>PROFESSIONAL EXPERIENCE EXAMPLES</strong><br>
-          “The Magic Castle” in The Academy of Magical Arts | Comedy Magic<br>
-          July 2017<br><br>
-          "Dream On"/"Hotel L'Amour"/"Love, Chaos, and Dinner"/"Decadent Delights" in Teatro ZinZanni | Artist<br>
-          June 2015 - September 2019<br><br>
-          “Iншi” in Palats Ukraina | Contortionist<br>
-          February 2021 - August 2021<br><br>
-          “Iншi - History Of Magic” Congress Hall in President Hotel | Director<br>
-          September 2021 - February 2022<br><br>
-          “The Gong Show” in ABC Network | Contortion with Magic<br>
-          August 2018 – August 2018<br><br>
-          “Young Stage Festival” in Basel, Switzerland | Contortion with Magic<br>
-          April 2022<br><br>
-          “IBM and SAM Magic Convention” in Kentucky Performing Arts | Comedy Magic<br>
-          July 2017<br><br>
-          “Comediada Clown Festival” in Theater House of Clowns Odessa | Comedy Magic<br>
-          April 2013, November 2021<br><br>
-          “IBT - Dracula Ballet” in Meydenbauer Theatre, Bellevue | Contortion with Magic<br>
-          October 2022<br><br>
-          “The Ship, Where The Light Lives” in Theaterschiff Potsdam | Contortion, Diabolo, Magic<br>
-          September 2022 - October 2022<br><br>
-          “Varietéspektakel – Café des artistes” in Pantheon Theater | Contortion with Magic, Diabolo<br>
-          August 2022<br><br>
-          “Slava The Dog” in Germany | Acting<br>
-          2023<br><br>
-          “Paraiso – Cirque Bouffon” in Musiktheater im Revier Gelsenkirchen | Contortion<br>
-          April 2023<br><br>
-          “Desert Myth – Flynn Creek Circus” touring California and Oregon | Contortion with Magic, Contortion<br>
-          June - October 2023<br><br>
-          “Weihnachtscircus Aachen” in Aachen, Germany | Contortion with Magic, Levitation<br>
-          December 2023<br><br>
-          “Sun World Ba Na Hills - All Stars” in Da Nang, Vietnam | Contortion with Magic, Magic, Contortion<br>
-          April - September 2024<br><br>
-          “Tu Si Que Vales” in Rome, Italy (Channel 5) | Contortion With Magic<br>
-          July 2024<br><br>
-          “IBT - Dracula Ballet and Nutcracker” in Meydenbauer Theatre, Bellevue | Magic and Dance<br>
-          October - December 2024
+          <a href="https://docs.google.com/document/d/13IjmO3IoloxVlFZrRk-nges3fUPmastBaBgzcPAgua4/edit?usp=sharing" target="_blank" class="resume-button">
+            Click For Resume
+          </a>
         </div>
       </section>
       
       <!-- Gallery Section on the Right -->
       <section class="gallery-section">
-        <img src="assets/about1.jpeg" alt="About Image 1">
         <img src="assets/about2.jpeg" alt="About Image 2">
         <img src="assets/about3.jpeg" alt="About Image 3">
-        <img src="assets/about4.JPG" alt="About Image 4">
-        <img src="assets/about5.JPG" alt="About Image 5">
         <img src="assets/about6.JPG" alt="About Image 6">
-        <img src="assets/about7.JPG" alt="About Image 7">
-        <img src="assets/about8.JPG" alt="About Image 8">
-        <img src="assets/about9.JPG" alt="About Image 9">
-        <img src="assets/about10.jpg" alt="About Image 10">
       </section>
     </div>
   </main>
   
-  <footer>
-    &copy; 2025 My Website. All rights reserved.
-  </footer>
+  <!-- Copyright Section -->
+  <div class="copyright">
+    &copy; 2025 magiccircusmax. All rights reserved.
+  </div>
   
   <script>
     // Toggle the menu-list when the hamburger is clicked
