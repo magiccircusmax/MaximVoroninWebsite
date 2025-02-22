@@ -138,8 +138,9 @@
       margin-top: 40px;
     }
     
-     /* ---------------- Mobile Styles ---------------- */
+    /* ---------------- Mobile Styles ---------------- */
     @media (max-width: 768px) {
+      /* Mobile Header: two rows grid */
       header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -149,6 +150,7 @@
         position: relative;
         height: auto;
       }
+      /* Logo in first row, left column */
       .logo {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -159,6 +161,7 @@
         height: 60px;
         margin-top: 50px;
       }
+      /* Social icons and hamburger in first row, right column */
       .header-right {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
@@ -166,8 +169,12 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
       }
+      .social-links a img, .hamburger img {
+        height: 30px;
+      }
+      /* Title spans both columns in the second row, centered */
       .title {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
@@ -177,21 +184,23 @@
         position: static;
         transform: none;
       }
+      /* Add horizontal padding ("cushions") for main content */
       main {
-        padding: 10px;
+        padding: 0 20px;
+      }
+      /* Stack the videos grid vertically if needed */
+      .videos-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
       main h1 {
         font-size: 36px;
-        margin-top: 10px;
-        margin-bottom: 10px;
       }
-      .section-heading {
+      .sub-heading {
         font-size: 24px;
-        margin: 15px 0 5px;
       }
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
+      .video-card p {
+        font-size: 20px;
       }
     }
   </style>
@@ -336,21 +345,21 @@
     <section class="section">
       <div class="section-heading">Magic</div>
       <div class="gallery-grid">
-        <img src="mphotos/m6.jpg" alt="Magic 6" class="equal-dimensions">
-        <img src="mphotos/m3.jpg" alt="Magic 3" class="equal-dimensions">
-        <img src="mphotos/m12.jpg" alt="Magic 12" class="equal-dimensions">
-        <img src="mphotos/m7.jpg" alt="Magic 7" class="equal-dimensions">
-        <img src="mphotos/m4.jpg" alt="Magic 4" class="equal-dimensions">
-        <img src="mphotos/m5.jpg" alt="Magic 5" class="equal-dimensions">
-        <img src="mphotos/m15.jpg" alt="Magic 15" class="equal-dimensions">
-        <img src="mphotos/m10.jpg" alt="Magic 10" class="equal-dimensions">
-        <img src="mphotos/m11.jpg" alt="Magic 11" class="equal-dimensions">
-        <img src="mphotos/m13.jpg" alt="Magic 13" class="equal-dimensions">
-        <img src="mphotos/m14.jpg" alt="Magic 14">
-        <img src="mphotos/m8.jpg" alt="Magic 8">
-        <img src="mphotos/m17.jpg" alt="Magic 17">
-        <img src="mphotos/m18.jpg" alt="Magic 18">
-        <img src="mphotos/m.jpg" alt="Magic 1">
+        <img src="mphotos/m6.JPEG" alt="Magic 6" class="equal-dimensions">
+        <img src="mphotos/m3.JPEG" alt="Magic 3" class="equal-dimensions">
+        <img src="mphotos/m12.JPEG" alt="Magic 12" class="equal-dimensions">
+        <img src="mphotos/m7.JPEG" alt="Magic 7" class="equal-dimensions">
+        <img src="mphotos/m4.JPEG" alt="Magic 4" class="equal-dimensions">
+        <img src="mphotos/m5.JPEG" alt="Magic 5" class="equal-dimensions">
+        <img src="mphotos/m15.JPEG" alt="Magic 15" class="equal-dimensions">
+        <img src="mphotos/m10.JPEG" alt="Magic 10" class="equal-dimensions">
+        <img src="mphotos/m11.JPEG" alt="Magic 11" class="equal-dimensions">
+        <img src="mphotos/m13.JPEG" alt="Magic 13" class="equal-dimensions">
+        <img src="mphotos/m14.JPEG" alt="Magic 14">
+        <img src="mphotos/m8.JPEG" alt="Magic 8">
+        <img src="mphotos/m17.JPEG" alt="Magic 17">
+        <img src="mphotos/m18.JPEG" alt="Magic 18">
+        <img src="mphotos/m.JPEG" alt="Magic 1">
       </div>
     </section>
   </main>
