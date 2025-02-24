@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/jpeg" href="assets/favicon.JPG">
+  <link rel="icon" type="image/jpeg" href="assets/favicon32.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Import Impact and Oswald fonts -->
@@ -17,8 +17,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: white;
-      color: black;
+      background-color: black;
+      color: white;
       font-family: Arial, sans-serif;
       text-align: center;
     }
@@ -27,6 +27,7 @@
       position: relative;
       padding: 20px;
       background-color: white;
+      color: black;
       height: 140px;
       z-index: 10;
       border-bottom: 4px solid #000;
@@ -127,12 +128,18 @@
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      margin-top: 60px;
-      gap: 40px;
+      margin-top: 120px;
+      gap: 180px;
     }
     .video-wrapper {
       width: 100%;
       max-width: 400px;
+      background-color: white; /* White background for the card */
+  color: black; /* Black text */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Optional shadow for contrast */
+  text-align: center;
     }
     .video-wrapper iframe {
       width: 100%;
@@ -140,9 +147,11 @@
       border: none;
     }
     .video-wrapper p {
-      font-size: 24px;
+      font-size: 28px;
       text-align: center;
       margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
     .content p {
       font-size: 28px;
@@ -151,8 +160,8 @@
     }
     /* ---------------- Footer ---------------- */
     footer {
-      background-color: #ffffff;
-      color: black;
+      background-color: #0000;
+      color: white;
       padding: 10px;
       text-align: center;
       font-family: "Oswald", sans-serif;
