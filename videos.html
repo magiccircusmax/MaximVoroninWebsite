@@ -314,19 +314,104 @@
       </div>
       
       <!-- Video Card 10: Magic With A Twist (YouTube) -->
-      <div class="video-card">
+       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/yUQGpNosWEo" allowfullscreen></iframe>
         <p>Magic With A Twist</p>
-      </div>
+        <p id="short-description-1" class="short-description">“Every Day is a Holiday” is a magical, immersive experience that transforms an ordinary day into something extraordinary.</p>
+  
+  <!-- This is the full description, hidden initially -->
+  <p id="full-description-1" class="full-description" style="display: none;">“Every Day is a Holiday” is a magical, immersive experience that transforms an ordinary day into something extraordinary. In this captivating, interactive show, world-renowned artist Maxim Voronin invites the audience to join him in creating a completely new holiday—one that reflects the joy, celebration, and meaning that each person brings to the table.
+Throughout the performance, Maxim weaves magic, circus arts, and audience participation to craft a unique holiday experience. Together with the crowd, they design and celebrate a day filled with wonder, laughter, and connection. As the evening unfolds, the show teaches a powerful lesson: instead of dreading any given day, we have the power to make it special and memorable simply by choosing to embrace happiness and create our own joy.
+With astonishing magic, witty interactions, and heartwarming moments, “Every Day is a Holiday” invites everyone to discover how we can turn any moment into a celebration. It’s a show that reminds us that happiness isn't bound by a calendar, and every day holds the potential for us to celebrate life in our own way.</p>
+
+  <!-- "Read More" link -->
+   <a href="javascript:void(0)" onclick="toggleDescription(1)">Read More</a>
+</div>
+
       <!-- Video Card 11: 7 Flaws (YouTube) -->
-      <div class="video-card">
+ <div class="video-card">
         <iframe src="https://www.youtube.com/embed/7mXNipzyJgU" allowfullscreen></iframe>
         <p>7 Flaws</p>
+        <p id="short-description-2" class="short-description">“7 Flaws” is a captivating blend of magic, circus artistry, and profound introspection.</p>
+  
+  <!-- This is the full description, hidden initially -->
+   <p id="full-description-2" class="full-description" style="display: none;">“7 Flaws” is a captivating blend of magic, circus artistry, and profound introspection. The story follows a man on a deeply personal journey, where he grapples with the complexities of self-worth and identity in a fast-paced, modern society. Trapped in a cycle of self-doubt, he constantly questions whether his flaws define him or if there is more to his existence than what meets the eye. Through a series of enchanting, magical experiences and vivid circus performances, the show explores the themes of the Seven Deadly Sins—each one representing a facet of human imperfection and inner conflict. As the man delves deeper into his own psyche, he discovers that true growth doesn’t come from perfection but from embracing who we are, flaws and all, while striving to be better versions of ourselves—for our own sake and for the world around us.
+  With its breathtaking circus acts and spellbinding magic, “7 Flaws” offers a visually stunning and emotionally resonant journey that resonates with anyone who has ever questioned their place in the world, while providing an optimistic message of self-acceptance and redemption.</p>
+
+  <!-- "Read More" link -->
+  <a href="javascript:void(0)" onclick="toggleDescription(2)">Read More</a>
       </div>
+
       <!-- Video Card 12: History Of Magic (YouTube Shorts) -->
-      <div class="video-card">
+       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/N5GXI29Y5h0" allowfullscreen></iframe>
         <p>History Of Magic</p>
+        <p id="short-description-3" class="short-description">“History of Magic” is a captivating, immersive journey through time that explores the fascinating evolution of magic from its origins to its future.</p>
+  
+  <!-- This is the full description, hidden initially -->
+   <p id="full-description-3" class="full-description" style="display: none;">“History of Magic” is a captivating, immersive journey through time that explores the fascinating evolution of magic from its origins to its future. This one-of-a-kind lecture show combines history with illusion, offering audiences a chance to experience magic in a way they never have before.
+
+Guided by five skilled magicians, including a charismatic storyteller, the show brings to life the most iconic magic tricks ever performed, while offering a modern twist on each one. From ancient wonders to groundbreaking feats of illusion, “History of Magic” showcases the progression of magic throughout history with stunning visual representations, interactive storytelling, and mind-bending magic.
+
+Rated the best magic show in Ukraine, “History of Magic” is an experience suitable for all ages, blending education, entertainment, and wonder in a way that will leave audiences in awe. Whether you're a magic enthusiast or a newcomer, this show will leave you with a deeper appreciation of the art form and its ever-evolving nature.
+
+With historical accuracy and a touch of magic, the show combines timeless illusions with a unique presentation, inviting audiences to see the past, present, and future of magic all in one unforgettable performance.</p>
+
+  <!-- "Read More" link -->
+  <a href="javascript:void(0)" onclick="toggleDescription(3)">Read More</a>
+      </div>
+
+ <script>
+    // Function to toggle between showing and hiding the full description for specific card
+    function toggleDescription(cardId) {
+      var fullDescription = document.getElementById("full-description-" + cardId);
+      var shortDescription = document.getElementById("short-description-" + cardId);
+      var link = event.target;
+
+      if (fullDescription.style.display === "none") {
+        fullDescription.style.display = "block";
+        shortDescription.style.display = "none";
+        link.textContent = "Read Less";
+      } else {
+        fullDescription.style.display = "none";
+        shortDescription.style.display = "block";
+        link.textContent = "Read More";
+      }
+    }
+  </script>
+<style>
+  .video-card {
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px; /* Optional: Set a maximum width for the card */
+    position: relative;
+  }
+
+  /* Short description container */
+  #short-description {
+    max-height: 120px; /* Set a maximum height for the initial description */
+    overflow: hidden;  /* Hide content that exceeds the max-height */
+    transition: max-height 0.3s ease-in-out; /* Smooth transition for height changes */
+  }
+
+  /* Full description container */
+  #full-description {
+    display: none;  /* Initially hidden */
+  }
+
+  /* Read More/Read Less link */
+  .video-card a {
+    text-decoration: none;
+    color: #000000;  /* Blue link color */
+    font-weight: bold;
+    margin-top: 0px;
+    display: inline-block;
+  }
+</style>
       </div>
     </div>
   </main>
