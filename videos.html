@@ -117,6 +117,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
+      justify-items: center;
     }
     .video-card {
       background: white;
@@ -133,6 +134,17 @@
       border-radius: 5px;
     }
     .video-card p {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .show-trailer iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      border-radius: 5px;
+    }
+    .show-trailer p {
       font-size: 24px;
       margin-top: 10px;
       margin-bottom: 5px;
@@ -207,6 +219,7 @@
       .videos-container {
         grid-template-columns: 1fr;
         gap: 20px;
+        justify-items: center;
       }
       main h1 {
         font-size: 36px;
@@ -314,22 +327,22 @@
       </div>
       
       <!-- Video Card 10: Magic With A Twist (YouTube) -->
-       <div class="video-card">
+      <div class="show-trailer">
         <iframe src="https://www.youtube.com/embed/yUQGpNosWEo" allowfullscreen></iframe>
         <p>Magic With A Twist</p>
         <p id="short-description-1" class="short-description">“Every Day is a Holiday” is a magical, immersive experience that transforms an ordinary day into something extraordinary.</p>
   
-  <!-- This is the full description, hidden initially -->
-  <p id="full-description-1" class="full-description" style="display: none;">“Every Day is a Holiday” is a magical, immersive experience that transforms an ordinary day into something extraordinary. In this captivating, interactive show, world-renowned artist Maxim Voronin invites the audience to join him in creating a completely new holiday—one that reflects the joy, celebration, and meaning that each person brings to the table.
-Throughout the performance, Maxim weaves magic, circus arts, and audience participation to craft a unique holiday experience. Together with the crowd, they design and celebrate a day filled with wonder, laughter, and connection. As the evening unfolds, the show teaches a powerful lesson: instead of dreading any given day, we have the power to make it special and memorable simply by choosing to embrace happiness and create our own joy.
-With astonishing magic, witty interactions, and heartwarming moments, “Every Day is a Holiday” invites everyone to discover how we can turn any moment into a celebration. It’s a show that reminds us that happiness isn't bound by a calendar, and every day holds the potential for us to celebrate life in our own way.</p>
+        <!-- This is the full description, hidden initially -->
+        <p id="full-description-1" class="full-description" style="display: none;">“Every Day is a Holiday” is a magical, immersive experience that transforms an ordinary day into something extraordinary. In this captivating, interactive show, world-renowned artist Maxim Voronin invites the audience to join him in creating a completely new holiday—one that reflects the joy, celebration, and meaning that each person brings to the table.
+      Throughout the performance, Maxim weaves magic, circus arts, and audience participation to craft a unique holiday experience. Together with the crowd, they design and celebrate a day filled with wonder, laughter, and connection. As the evening unfolds, the show teaches a powerful lesson: instead of dreading any given day, we have the power to make it special and memorable simply by choosing to embrace happiness and create our own joy.
+      With astonishing magic, witty interactions, and heartwarming moments, “Every Day is a Holiday” invites everyone to discover how we can turn any moment into a celebration. It’s a show that reminds us that happiness isn't bound by a calendar, and every day holds the potential for us to celebrate life in our own way.</p>
 
-  <!-- "Read More" link -->
-   <a href="javascript:void(0)" onclick="toggleDescription(1)">Read More</a>
-</div>
+        <!-- "Read More" link -->
+         <a href="javascript:void(0)" onclick="toggleDescription(1)">Read More</a>
+    </div>
 
       <!-- Video Card 11: 7 Flaws (YouTube) -->
- <div class="video-card">
+      <div class="show-trailer">
         <iframe src="https://www.youtube.com/embed/7mXNipzyJgU" allowfullscreen></iframe>
         <p>7 Flaws</p>
         <p id="short-description-2" class="short-description">“7 Flaws” is a captivating blend of magic, circus artistry, and profound introspection.</p>
@@ -340,10 +353,10 @@ With astonishing magic, witty interactions, and heartwarming moments, “Every D
 
   <!-- "Read More" link -->
   <a href="javascript:void(0)" onclick="toggleDescription(2)">Read More</a>
-      </div>
+    </div>
 
       <!-- Video Card 12: History Of Magic (YouTube Shorts) -->
-       <div class="video-card">
+    <div class="show-trailer">
         <iframe src="https://www.youtube.com/embed/N5GXI29Y5h0" allowfullscreen></iframe>
         <p>History Of Magic</p>
         <p id="short-description-3" class="short-description">“History of Magic” is a captivating, immersive journey through time that explores the fascinating evolution of magic from its origins to its future.</p>
@@ -359,7 +372,7 @@ With historical accuracy and a touch of magic, the show combines timeless illusi
 
   <!-- "Read More" link -->
   <a href="javascript:void(0)" onclick="toggleDescription(3)">Read More</a>
-      </div>
+    </div>
 
  <script>
     // Function to toggle between showing and hiding the full description for specific card
@@ -391,6 +404,19 @@ With historical accuracy and a touch of magic, the show combines timeless illusi
     position: relative;
   }
 
+  .show-trailer {
+    min-height: 445px;
+    height: fit-content;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px; /* Optional: Set a maximum width for the card */
+    position: relative;
+  }
+
   /* Short description container */
   #short-description {
     max-height: 120px; /* Set a maximum height for the initial description */
@@ -410,6 +436,21 @@ With historical accuracy and a touch of magic, the show combines timeless illusi
     font-weight: bold;
     margin-top: 0px;
     display: inline-block;
+  }
+
+  /* Read More/Read Less link */
+  .show-trailer a {
+    text-decoration: none;
+    color: #000000;  /* Blue link color */
+    font-weight: bold;
+    margin-top: 0px;
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .show-trailer {
+      min-height: 0px;
+    }
   }
 </style>
       </div>
